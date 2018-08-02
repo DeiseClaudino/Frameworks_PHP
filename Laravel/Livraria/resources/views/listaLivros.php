@@ -2,6 +2,17 @@
   <body>
   <h1>Listagem de Livros</h1>
     <table>
+      
+      <tr>
+        <th>nome</th>
+        <th>preco</th>
+        <th>descricao</th>
+        <th>isbn</th>
+        <th>tipoLivro</th>
+        <th>taxaImpressao</th>
+        <th>waterMark</th>
+      </tr>
+
       <?php foreach ($livros as $livro) : ?>
         <tr>
           <td><?= $livro->nome ?></td>
