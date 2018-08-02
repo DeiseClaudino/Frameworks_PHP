@@ -6,9 +6,17 @@ class LivroController extends Controller {
 
   public function lista()
   {
+    $html = '<h1>Listagem de Produtos</h1>';
+
     $livros = DB::select("select * from livros");
-    dd($livros);
-     return "<h1>Aqui tem uma lista<h1>";
+
+    foreach ($livros as $livro) {
+
+      $html .= "<br/> Nome: ".$livro->nome;
+
+    }
+
+     return $html;
   }
 
 }
