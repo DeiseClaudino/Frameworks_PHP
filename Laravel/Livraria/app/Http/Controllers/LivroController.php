@@ -9,7 +9,7 @@ class LivroController extends Controller {
 
     $livros = DB::select("select * from livros");
 
-     return view('listaLivros')->with('livros', $livros);
+     return view('listaLivros')->withLivros($livros);
   }
 
 }
