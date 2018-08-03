@@ -14,7 +14,8 @@ class LivroController extends Controller {
 
   public function buscaProduto($id)
     {
-        $lista =  DB::select("SELECT * FROM livros WHERE id = :id");
+        
+        $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
         // $produto_buscado = $this->conexao->prepare($lista);
         // $produto_buscado->bindValue(':id', $id);
         // $produto_buscado->execute();
@@ -26,7 +27,11 @@ class LivroController extends Controller {
         //     $produto->setId($produto_buscado['id']);
         // }
         // return $produto;
-        return view('alteraLivros')->withProduto($lista);
+
+        if(empty($resposta)) {
+          return "Esse produto não existe";
+        }
+        return view('alteraLivros')->withProduto($lista[0]);
     }
 
     public function alteraProduto(Produto $produto)

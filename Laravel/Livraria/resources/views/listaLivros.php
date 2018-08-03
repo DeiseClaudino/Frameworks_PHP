@@ -55,7 +55,7 @@
 
             <td>
               <a class="btn btn-primary"
-              href="/listaLivros/alterar">
+              href="/listaLivros/alterar?id=<?= $livro->id ?>">
               Alterar
               </a>
             </td>
