@@ -26,7 +26,9 @@
 
       <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3  bg-light text-dark"  href="/docs/4.1/getting-started/download/">Logout</a>
     </header>
+
     <h1>Listagem de Livros</h1>
+    
     <div class="container">
       <table class="table table-striped table-bordered table-hover">
 
@@ -38,6 +40,7 @@
             <th>tipoLivro</th>
             <th>taxaImpressao</th>
             <th>waterMark</th>
+            <th colspan="2">Ações</th>
           </tr>
 
         <?php foreach ($livros as $livro) : ?>
@@ -49,7 +52,21 @@
             <td><?= $livro->tipoLivro ?></td>
             <td><?= $livro->taxaImpressao ?></td>
             <td><?= $livro->waterMark ?></td>
+
+            <td>
+              <a class="btn btn-primary"
+              href="produto-altera-formulario.php?id=">
+              alterar
+              </a>
+            </td>
+            <td>
+              <form action="../controller/remove-produto.php" method="post">
+                <input type="hidden" name="id" value="">
+                <button class="btn btn-danger">remover</button>
+              </form>
+            </td>
           </tr>
+
         <?php endforeach ?>
       </table>
     </div>
