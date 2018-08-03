@@ -7,6 +7,6 @@ Route::get('/', function ()
 
 Route::get('/listaLivros', 'LivroController@lista');
 
-Route::get('/listaLivros/alterar/{id}', 'LivroController@alteraProduto');
+Route::get('/listaLivros/alterar/{id}', 'LivroController@alteraProduto')->where('id', '[0-9]+');
 
-Route::get('/listaLivros/remove/{id}', 'LivroController@removeProduto');
+Route::get('/listaLivros/remove/{id}', 'LivroController@removeProduto')->where('id', '[0-9]+');

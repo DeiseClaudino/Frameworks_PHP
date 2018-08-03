@@ -15,7 +15,7 @@ class LivroController extends Controller {
 
   public function buscaProduto($id)
     {
-        $id = Request::input('id');
+
         $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
         // $produto_buscado = $this->conexao->prepare($lista);
         // $produto_buscado->bindValue(':id', $id);
