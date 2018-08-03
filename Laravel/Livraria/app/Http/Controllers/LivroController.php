@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Request;
 
 class LivroController extends Controller {
 
@@ -14,7 +15,7 @@ class LivroController extends Controller {
 
   public function buscaProduto($id)
     {
-        
+        $id = Request::input('id');
         $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
         // $produto_buscado = $this->conexao->prepare($lista);
         // $produto_buscado->bindValue(':id', $id);
@@ -28,7 +29,7 @@ class LivroController extends Controller {
         // }
         // return $produto;
 
-        if(empty($resposta)) {
+        if(empty($lista)) {
           return "Esse produto não existe";
         }
         return view('alteraLivros')->withProduto($lista[0]);

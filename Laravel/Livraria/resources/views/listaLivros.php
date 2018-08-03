@@ -55,12 +55,12 @@
 
             <td>
               <a class="btn btn-primary"
-              href="/listaLivros/alterar?id=<?= $livro->id ?>">
+              href="/listaLivros/alterar/<?= $livro->id ?>">
               Alterar
               </a>
             </td>
             <td>
-              <form action="/listaLivros/remove" method="post">
+              <form action="/listaLivros/remove/<?= $livro->id ?>" method="post">
                 <input type="hidden" name="id" value="">
                 <button class="btn btn-danger">Excluir</button>
               </form>
