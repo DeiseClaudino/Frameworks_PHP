@@ -7,6 +7,6 @@ Route::get('/', function ()
 
 Route::get('/listaLivros', 'LivroController@lista');
 
-Route::get('/listaLivros/alterar', 'LivroController@alteraProduto');
+Route::get('/listaLivros/alterar/{id}', 'LivroController@alteraProduto');
 
-Route::get('/listaLivros/remove', 'LivroController@removeProduto');
+Route::get('/listaLivros/remove/{id}', 'LivroController@removeProduto');
