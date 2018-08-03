@@ -13,13 +13,13 @@
             <a class="nav-link " href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/docs/4.1/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Lista</a>
+            <a class="nav-link active" href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Lista</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="/docs/4.1/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Inserir +</a>
+            <a class="nav-link " href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Inserir +</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://themes.getbootstrap.com" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Themes');" target="_blank" rel="noopener">Contatos</a>
+            <a class="nav-link" href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Themes');" target="_blank" rel="noopener">Contatos</a>
           </li>
         </ul>
       </div>
@@ -55,12 +55,12 @@
 
             <td>
               <a class="btn btn-primary"
-              href="produto-altera-formulario.php?id=">
+              href="/listaLivros/alterar">
               Alterar
               </a>
             </td>
             <td>
-              <form action="../controller/remove-produto.php" method="post">
+              <form action="/listaLivros/remove" method="post">
                 <input type="hidden" name="id" value="">
                 <button class="btn btn-danger">Excluir</button>
               </form>
