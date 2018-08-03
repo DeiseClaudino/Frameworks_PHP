@@ -28,7 +28,7 @@
     </header>
 
     <h1>Listagem de Livros</h1>
-    
+
     <div class="container">
       <table class="table table-striped table-bordered table-hover">
 
@@ -56,13 +56,13 @@
             <td>
               <a class="btn btn-primary"
               href="produto-altera-formulario.php?id=">
-              alterar
+              Alterar
               </a>
             </td>
             <td>
               <form action="../controller/remove-produto.php" method="post">
                 <input type="hidden" name="id" value="">
-                <button class="btn btn-danger">remover</button>
+                <button class="btn btn-danger">Excluir</button>
               </form>
             </td>
           </tr>
