@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-use Request;
 
 class LivroController extends Controller {
 
@@ -72,9 +71,9 @@ class LivroController extends Controller {
 
     public function removeProduto($id)
     {
-       $query = DB::delete("DELETE FROM livros WHERE id = :id");
-       $stmt = $this->conexao->prepare($query);
-       $stmt->bindValue(':id', $id);
+       $query = DB::delete("DELETE FROM livros WHERE id = ?", [$id]);
+       // $stmt = $this->conexao->prepare($query);
+       // $stmt->bindValue(':id', $id);
        return $stmt->execute();
     }
 }
