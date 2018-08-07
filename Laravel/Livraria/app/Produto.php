@@ -13,13 +13,14 @@ class Produto extends Model
   private $categoria;
   private $isbn;
 
-public function __construct($nome, $preco, $descricao, Categoria $categoria, $isbn)
+public function __construct()
 {
-      $this->nome = $nome;
-      $this->preco = $preco;
-      $this->descricao = $descricao;
-      $this->categoria = $categoria;
-      $this->isbn = $isbn;
+    // $nome, $preco, $descricao, Categoria $categoria, $isbn
+      // $this->nome = $nome;
+      // $this->preco = $preco;
+      // $this->descricao = $descricao;
+      // $this->categoria = $categoria;
+      // $this->isbn = $isbn;
     }
     public function getId()
     {
@@ -54,10 +55,7 @@ public function __construct($nome, $preco, $descricao, Categoria $categoria, $is
     {
         return $this->isbn = $isbn;
     }
-    public function temIsbn()
-    {
-      return $this instanceof Livro;
-    }
+
     public function temTaxaImpressao()
     {
       return $this instanceof LivroFisico;
@@ -67,7 +65,7 @@ public function __construct($nome, $preco, $descricao, Categoria $categoria, $is
       return $this instanceof Ebook;
     }
 
-    //abstract public function atualizaBaseadoEm($params);
+    // abstract public function atualizaBaseadoEm($params);
 
     public function __toString()
     {
