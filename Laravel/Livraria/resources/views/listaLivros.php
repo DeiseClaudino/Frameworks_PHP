@@ -60,7 +60,7 @@
               </a>
             </td>
             <td>
-              <form action="/listaLivros/remove/<?= $livro->id ?>" method="post">
+              <form action="/listaLivros/remove<?= $livro->id ?>" method="post">
                 <input type="hidden" name="id" value="">
                 <button class="btn btn-danger">Excluir</button>
               </form>

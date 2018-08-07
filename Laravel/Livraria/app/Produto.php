@@ -50,6 +50,11 @@ class Produto extends Model
         return $this->isbn = $isbn;
     }
 
+      public function temIsbn()
+     {
+         return $this instanceof Produto;
+     }
+
     public function temTaxaImpressao()
     {
       return $this instanceof LivroFisico;
