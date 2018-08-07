@@ -90,7 +90,7 @@
     <tr>
       <td>Taxa de Impressão (caso seja um Livro Físico)</td>
         <td>
-          <input type="text" class="form-control" name="taxaImpressao" value="<?php if ($produto->temTaxaImpressao()) {);
+          <input type="text" class="form-control" name="taxaImpressao" value="<?php if ($produto->temTaxaImpressao()) {
                       echo $produto->getTaxaImpressao();
                   } ?>">
         </td>
@@ -99,7 +99,7 @@
     <tr>
         <td>WaterMark (caso seja um Ebook)</td>
         <td>
-         <input type="text" class="form-control" name="WaterMark" value="<?php if ($produto->temWaterMark()) {);
+         <input type="text" class="form-control" name="WaterMark" value="<?php if ($produto->temWaterMark()) {;
                       echo $produto->getWaterMark();
                   } ?>">
         </td>
