@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use App\Produto;
 
 class LivroController extends Controller {
 
@@ -16,6 +17,8 @@ class LivroController extends Controller {
     {
 
         $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
+
+        $produto_buscado = App\Produto::all();
         // $produto_buscado = $this->conexao->prepare($lista);
         // $produto_buscado->bindValue(':id', $id);
         // $produto_buscado->execute();
