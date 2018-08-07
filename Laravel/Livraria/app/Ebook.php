@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Ebook;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Produto;
 
 class Ebook extends Model, Produto
 {

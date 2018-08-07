@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Produto;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,14 +13,8 @@ class Produto extends Model
   private $categoria;
   private $isbn;
 
-public function __construct()
-{
-    // $nome, $preco, $descricao, Categoria $categoria, $isbn
-      // $this->nome = $nome;
-      // $this->preco = $preco;
-      // $this->descricao = $descricao;
-      // $this->categoria = $categoria;
-      // $this->isbn = $isbn;
+    public function __construct()
+    {
     }
     public function getId()
     {
