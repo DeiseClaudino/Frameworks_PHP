@@ -62,8 +62,7 @@
 
             <td>
 
-            </td>
-
+          </td>
         </tr>
         <tr>
             <th>Tipo do produto</th>
@@ -92,7 +91,6 @@
             <th>ISBN (caso seja um Livro)</th>
             <td>
 
-
           </td>
         </tr>
         <tr>
@@ -106,6 +104,11 @@
             <th>WaterMark (caso seja um Ebook)</th>
             <td>
 
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="btn btn-primary" type="submit">Alterar</button>
             </td>
           </tr>
       </table>

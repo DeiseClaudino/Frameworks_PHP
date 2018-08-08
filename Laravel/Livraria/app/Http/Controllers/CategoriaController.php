@@ -19,7 +19,7 @@ class CategoriaController extends Controller
            $categoria->setNome($linha['nome']);
            array_push($categorias, $categoria);
        }
-       return $categorias;
+       return view('alteraLivros')->withCategorias($categorias);
 
   }
 }

@@ -20,8 +20,6 @@ class LivroController extends Controller {
         $id = Request::route('id');
 
         $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
-//echo "<pre>";
-        // var_dump($lista);die;
 
         if(empty($lista)) {
           return "Esse produto não existe";

@@ -52,7 +52,7 @@ class Produto extends Model
 
       public function temIsbn()
      {
-         return $this instanceof Produto;
+         return $this instanceof Ebook;
      }
 
     public function temTaxaImpressao()
