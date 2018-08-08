@@ -28,103 +28,86 @@
     </header>
 
   <body>
-    <h1>Detalhes do produto: <?= $produto->nome ?> </h1>
+    <h1>Alterar <?= $produto->nome ?> </h1>
+    <div class="container">
+      <table class="table table-striped table-bordered table-hover">
 
-    <tr>
-        <td>Nome</td>
-        <td>
+        <tr>
+            <th>Nome</th>
+            <td>
 
-             <input class="form-control" type="text" name="nome"
-                value="<?=$produto->nome?>">
+                 <input class="form-control" type="text" name="nome"
+                    value="<?=$produto->nome?>">
 
-    </td>
-    </tr>
-    <tr>
-        <td>Preço</td>
-        <td>
-
-            <input  class="form-control" type="number" step="0.01" name="preco"
-                value="<?=$produto->preco?>">
         </td>
+        </tr>
+        <tr>
+            <th>Preço</th>
+            <td>
 
-    </tr>
-    <tr>
-        <td>Descrição</td>
-        <td>
+                <input  class="form-control" type="number" step="0.01" name="preco"
+                    value="<?=$produto->preco?>">
+            </td>
 
-            <textarea class="form-control" name="descricao"><?=$produto->descricao?></textarea>
-      </td>
-      </tr>
-      <tr>
-        <td>Categoria</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>
 
-        <td>
-             <select name="categoria_id" class="form-control">
-               <?php
-                    foreach ($categorias as $categoria) :
+                <textarea class="form-control" name="descricao"><?=$produto->descricao?></textarea>
+          </td>
+          </tr>
+          <tr>
+            <th>Categoria</th>
 
-                        $essaEhACategoria = $produto->getCategoria()->getId() == $categoria->getId();
+            <td>
 
-                        $selecao = $essaEhACategoria ? "selected='selected'" : "";
+            </td>
+
+        </tr>
+        <tr>
+            <th>Tipo do produto</th>
+            <td>
+               <select name="tipoProduto" class="form-control">
+                 <optgroup label="Livros">
+                   <?php
+                    $tipos = array("Livro Fisico", "Ebook");
+                    foreach ($tipos as $tipo) :
+                      $tipoSemEspaco = str_replace(" ", "", $tipo);
+                        $esseEhOTipo = get_class($produto) == $tipoSemEspaco;
+                        $selecao = $esseEhOTipo ? "selected='selected'" : "";
                     ?>
-                 <option value="<?=$categoria->getId()?>" <?=$selecao?>>
-                   <?=$categoria->getNome()?>
-                 </option>
-               <?php
+                        <option value="<?=$tipoSemEspaco?>" <?=$selecao?>>
+                            <?=$tipo?>
+                        </option>
+
+                    <?php
                     endforeach
                     ?>
-             </select>
-        </td>
+                 </optgroup>
+                </select>
+           </td>
+        </tr>
+        <tr>
+            <th>ISBN (caso seja um Livro)</th>
+            <td>
 
-    </tr>
-    <tr>
-        <td>Tipo do produto</td>
-        <td>
-           <select name="tipoProduto" class="form-control">
-             <optgroup label="Livros">
-               <?php
-                $tipos = array("Livro Fisico", "Ebook");
-                foreach ($tipos as $tipo) :
-                  $tipoSemEspaco = str_replace(" ", "", $tipo);
-                    $esseEhOTipo = get_class($produto) == $tipoSemEspaco;
-                    $selecao = $esseEhOTipo ? "selected='selected'" : "";
-                ?>
-                    <option value="<?=$tipoSemEspaco?>" <?=$selecao?>>
-                        <?=$tipo?>
-                    </option>
 
-                <?php
-                endforeach
-                ?>
-             </optgroup>
-            </select>
-       </td>
-    </tr>
-    <tr>
-        <td>ISBN (caso seja um Livro)</td>
-        <td>
-            <input type="text" name="isbn" class="form-control"
-                        value="<?php if ($produto->temIsbn()) {
-                    echo $produto->getIsbn();
-                };?>" >
+          </td>
+        </tr>
+        <tr>
+          <th>Taxa de Impressão (caso seja um Livro Físico)</th>
+            <td>
 
-      </td>
-    </tr>
-    <tr>
-      <td>Taxa de Impressão (caso seja um Livro Físico)</td>
-        <td>
-          <input type="text" class="form-control" name="taxaImpressao" value="<?php if ($produto->temTaxaImpressao()) {
-                      echo $produto->getTaxaImpressao();
-                  } ?>">
-        </td>
+            </td>
 
-    </tr>
-    <tr>
-        <td>WaterMark (caso seja um Ebook)</td>
-        <td>
-         <input type="text" class="form-control" name="WaterMark" value="<?php if ($produto->temWaterMark()) {;
-                      echo $produto->getWaterMark();
-                  } ?>">
-        </td>
-      </tr>
+        </tr>
+        <tr>
+            <th>WaterMark (caso seja um Ebook)</th>
+            <td>
+
+            </td>
+          </tr>
+      </table>
+    </div>
   </body>

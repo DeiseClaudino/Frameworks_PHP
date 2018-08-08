@@ -33,13 +33,14 @@
       <table class="table table-striped table-bordered table-hover">
 
           <tr>
-            <th>nome</th>
-            <th>preco</th>
-            <th>descricao</th>
-            <th>isbn</th>
-            <th>tipoLivro</th>
-            <th>taxaImpressao</th>
-            <th>waterMark</th>
+            <th>Nome</th>
+            <th>Preco</th>
+            <th>Descricao</th>
+            <th>Categoria</th>
+            <th>Isbn</th>
+            <th>TipoLivro</th>
+            <th>TaxaImpressao</th>
+            <th>WaterMark</th>
             <th colspan="2">Ações</th>
           </tr>
 
@@ -48,6 +49,10 @@
             <td><?= $livro->nome ?></td>
             <td><?= $livro->preco ?></td>
             <td><?= $livro->descricao ?></td>
+            <td>
+
+              //categoria
+            </td>
             <td><?= $livro->isbn ?></td>
             <td><?= $livro->tipoLivro ?></td>
             <td><?= $livro->taxaImpressao ?></td>
@@ -60,7 +65,8 @@
               </a>
             </td>
             <td>
-              <form action="/listaLivros/remove<?= $livro->id ?>" method="post">
+              <form>
+                <a href="/listaLivros/remove?id=<?= $livro->id ?>">
                 <input type="hidden" name="id" value="">
                 <button class="btn btn-danger">Excluir</button>
               </form>

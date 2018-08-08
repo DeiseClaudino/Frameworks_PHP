@@ -10,7 +10,7 @@ class LivroController extends Controller {
   public function lista()
   {
 
-    $livros = DB::select("select * from livros");
+    $livros = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id");
 
      return view('listaLivros')->withLivros($livros);
   }
@@ -20,6 +20,8 @@ class LivroController extends Controller {
         $id = Request::route('id');
 
         $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
+//echo "<pre>";
+        // var_dump($lista);die;
 
         if(empty($lista)) {
           return "Esse produto não existe";
@@ -59,9 +61,9 @@ class LivroController extends Controller {
 
     public function removeProduto($id)
     {
+        $id = Request::route('id');
        $query = DB::delete("DELETE FROM livros WHERE id = ?", [$id]);
-       // $stmt = $this->conexao->prepare($query);
-       // $stmt->bindValue(':id', $id);
-       return $stmt->execute();
+
+       return view('listaLivros');
     }
 }
