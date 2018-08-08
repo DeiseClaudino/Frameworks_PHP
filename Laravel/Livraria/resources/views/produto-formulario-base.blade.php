@@ -28,16 +28,15 @@
     </header>
 
   <body>
-    <h1>Alterar <?= $produto->nome ?> </h1>
-    <div class="container">
-      <table class="table table-striped table-bordered table-hover">
 
+    <div class="container">
+        @yield('conteudo')
         <tr>
             <th>Nome</th>
             <td>
 
                  <input class="form-control" type="text" name="nome"
-                    value="<?=$produto->nome?>">
+                    value="{{$produto->nome}}">
 
         </td>
         </tr>
@@ -46,7 +45,7 @@
             <td>
 
                 <input  class="form-control" type="number" step="0.01" name="preco"
-                    value="<?=$produto->preco?>">
+                    value="{{$produto->preco}}">
             </td>
 
         </tr>
@@ -54,7 +53,7 @@
             <th>Descrição</th>
             <td>
 
-                <textarea class="form-control" name="descricao"><?=$produto->descricao?></textarea>
+                <textarea class="form-control" name="descricao">{{$produto->descricao}}</textarea>
           </td>
           </tr>
           <tr>
@@ -92,8 +91,8 @@
             <td>
 
           </td>
-        </tr>
         <tr>
+        </tr>
           <th>Taxa de Impressão (caso seja um Livro Físico)</th>
             <td>
 
@@ -106,11 +105,6 @@
 
             </td>
           </tr>
-          <tr>
-            <td>
-              <button class="btn btn-primary" type="submit">Alterar</button>
-            </td>
-          </tr>
-      </table>
+
     </div>
   </body>
