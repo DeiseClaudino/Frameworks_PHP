@@ -13,7 +13,7 @@
             <a class="nav-link " href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Lista</a>
+            <a class="nav-link" href="/listaLivros" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Lista</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Inserir +</a>
