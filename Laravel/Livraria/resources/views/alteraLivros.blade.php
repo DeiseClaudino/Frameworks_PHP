@@ -1,6 +1,6 @@
 @extends('produto-formulario-base')
 @section('outros')
-  <h1>Alterar <?= $produto->nome ?> </h1>
+  <h1>Alterando: {{$produto->nome}} </h1>
 
 
       <tr>
