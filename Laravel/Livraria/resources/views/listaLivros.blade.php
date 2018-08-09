@@ -16,7 +16,7 @@
               <th colspan="2">Ações</th>
             </tr>
 
-          <?php foreach ($livros as $livro) : ?>
+          @foreach ($livros as $livro)
             <tr>
               <td>{{ $livro->nome }}</td>
               <td>{{ $livro->preco }}</td>
@@ -30,20 +30,20 @@
 
               <td>
                 <a class="btn btn-primary"
-                href="/listaLivros/alterar/<?= $livro->id ?>">
+                href="/listaLivros/alterar/{{$livro->id}}">
                 Alterar
                 </a>
               </td>
               <td>
                 <form>
-                  <a href="/listaLivros/remove?id=<?= $livro->id ?>">
+                  <a href="/listaLivros/remove/{{$livro->id}}">
                   <input type="hidden" name="id" value="">
                   <button class="btn btn-danger">Excluir</button>
                 </form>
               </td>
             </tr>
 
-          <?php endforeach ?>
+          @endforeach
         </table>
 @stop
 @extends('rodape')
