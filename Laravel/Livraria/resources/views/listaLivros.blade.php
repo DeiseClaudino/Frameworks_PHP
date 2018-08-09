@@ -2,7 +2,6 @@
 @section('conteudo')
       <h1>Listagem de Livros</h1>
 
-      <div class="container">
         <table class="table table-striped table-bordered table-hover">
 
             <tr>
@@ -46,8 +45,7 @@
 
           <?php endforeach ?>
         </table>
-      </div>
-
-    </body>
-  </html>
+@stop
+@extends('rodape')
+@section('rodape')
 @stop
