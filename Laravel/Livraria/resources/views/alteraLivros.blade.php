@@ -8,8 +8,6 @@
           <button class="btn btn-primary" type="submit">Alterar</button>
         </td>
       </tr>
-  </table>
+
 @stop
-<!--
-      </div>
-    </body> -->
+  
