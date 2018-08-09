@@ -18,15 +18,15 @@
 
           <?php foreach ($livros as $livro) : ?>
             <tr>
-              <td><?= $livro->nome ?></td>
-              <td><?= $livro->preco ?></td>
-              <td><?= $livro->descricao ?></td>
+              <td>{{ $livro->nome }}</td>
+              <td>{{ $livro->preco }}</td>
+              <td>{{ $livro->descricao }}</td>
               <td>
               </td>
-              <td><?= $livro->isbn ?></td>
-              <td><?= $livro->tipoLivro ?></td>
-              <td><?= $livro->taxaImpressao ?></td>
-              <td><?= $livro->waterMark ?></td>
+              <td>{{ $livro->isbn }}</td>
+              <td>{{ $livro->tipoLivro }}</td>
+              <td>{{ $livro->taxaImpressao }}</td>
+              <td>{{ $livro->waterMark }}</td>
 
               <td>
                 <a class="btn btn-primary"
