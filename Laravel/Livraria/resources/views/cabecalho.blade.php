@@ -1,7 +1,8 @@
 <html>
   <head>
       <link href="/css/app.css" rel="stylesheet">
-      <title>Controle de estoque</title>
+      <title>Minha Livraria</title>
+      <!-- <link rel="icon" href=""> -->
   </head>
   <body>
     <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-primary text-white">
@@ -16,7 +17,7 @@
             <a class="nav-link" href="/listaLivros" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Lista</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Inserir +</a>
+            <a class="nav-link " href="/adicionarNovo" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Inserir +</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Themes');" target="_blank" rel="noopener">Contatos</a>
