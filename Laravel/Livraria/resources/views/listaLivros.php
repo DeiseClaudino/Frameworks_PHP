@@ -50,8 +50,6 @@
             <td><?= $livro->preco ?></td>
             <td><?= $livro->descricao ?></td>
             <td>
-
-              //categoria
             </td>
             <td><?= $livro->isbn ?></td>
             <td><?= $livro->tipoLivro ?></td>
