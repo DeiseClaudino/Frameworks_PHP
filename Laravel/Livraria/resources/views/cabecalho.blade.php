@@ -17,7 +17,7 @@
             <a class="nav-link" href="/listaLivros" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Lista</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="/adicionarNovo" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Inserir +</a>
+            <a class="nav-link " href="/formulario" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Inserir +</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Themes');" target="_blank" rel="noopener">Contatos</a>
