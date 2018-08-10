@@ -64,4 +64,29 @@ class LivroController extends Controller {
 
        return view('listaLivros');
     }
+
+    public function abreFormulario()
+    {
+      return view('adiciona-livro');
+    }
+
+
+    public function adicionaProduto()
+    {
+
+        $produto->nome = Request::input('nome');
+        $produto->preco = Request::input('preco');
+        $produto->descricao = Request::input('descricao');
+        $produto->categoria_id = Request::input('categoria_id');
+        $produto->isbn = Request::input('isbn');
+        $produto->tipoLivro = Request::input('tipoLivro');
+        $produto->taxaImpressao = Request::input('taxaImpressao');
+        $produto->waterMark = Request::input('waterMark');
+
+        DB::insert('INSERT INTO produtos VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)',
+        array($produto->nome, $produto->preco, $produto->descricao, $produto->categoria_id, $produto->isbn, $produto->tipoLivro, $produto->taxaImpressao, $produto->waterMark));
+
+        return view('alerta')->with('produto->nome', $produto->nome);
+      }
+
 }
