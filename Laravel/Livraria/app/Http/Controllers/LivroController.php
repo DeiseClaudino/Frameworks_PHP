@@ -86,7 +86,10 @@ class LivroController extends Controller {
         DB::insert('INSERT INTO produtos VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)',
         array($produto->nome, $produto->preco, $produto->descricao, $produto->categoria_id, $produto->isbn, $produto->tipoLivro, $produto->taxaImpressao, $produto->waterMark));
 
-        return view('alerta')->with('produto->nome', $produto->nome);
+        $produto = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id");
+
+
+        return view('listaLivros')->with('produto', $produto);
       }
 
 }
