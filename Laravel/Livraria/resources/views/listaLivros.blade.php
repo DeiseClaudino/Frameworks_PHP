@@ -16,27 +16,27 @@
               <th colspan="2">Ações</th>
             </tr>
 
-          @foreach ($livros as $livro)
+          @foreach ($produto as $produto)
             <tr>
-              <td>{{ $livro->nome }}</td>
-              <td>{{ $livro->preco }}</td>
-              <td>{{ $livro->descricao }}</td>
+              <td>{{ $produto->nome }}</td>
+              <td>{{ $produto->preco }}</td>
+              <td>{{ $produto->descricao }}</td>
               <td>
               </td>
-              <td>{{ $livro->isbn }}</td>
-              <td>{{ $livro->tipoLivro }}</td>
-              <td>{{ $livro->taxaImpressao }}</td>
-              <td>{{ $livro->waterMark }}</td>
+              <td>{{ $produto->isbn }}</td>
+              <td>{{ $produto->tipoLivro }}</td>
+              <td>{{ $produto->taxaImpressao }}</td>
+              <td>{{ $produto->waterMark }}</td>
 
               <td>
                 <a class="btn btn-primary"
-                href="/listaLivros/alterar/{{$livro->id}}">
+                href="/listaLivros/alterar/{{$produto->id}}">
                 Alterar
                 </a>
               </td>
               <td>
                 <form>
-                  <a href="/listaLivros/remove/{{$livro->id}}">
+                  <a href="/listaLivros/remove/{{$produto->id}}">
                   <input type="hidden" name="id" value="">
                   <button class="btn btn-danger">Excluir</button>
                 </form>

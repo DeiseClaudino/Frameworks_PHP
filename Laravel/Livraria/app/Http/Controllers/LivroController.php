@@ -10,9 +10,9 @@ class LivroController extends Controller {
   public function lista()
   {
 
-    $livros = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id");
+    $produto = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id");
 
-     return view('listaLivros')->withLivros($livros);
+     return view('listaLivros')->withProduto($produto);
   }
 
   public function buscaProduto()
@@ -86,10 +86,8 @@ class LivroController extends Controller {
         DB::insert('INSERT INTO produtos VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)',
         array($produto->nome, $produto->preco, $produto->descricao, $produto->categoria_id, $produto->isbn, $produto->tipoLivro, $produto->taxaImpressao, $produto->waterMark));
 
-        $produto = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id");
+        return redirect('/listaLivros')->withImput();
 
-
-        return view('listaLivros')->with('produto', $produto);
       }
 
 }
