@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Produto extends Model
 {
   protected $table = 'livros';
+  public $timestamps = false;
   private $id;
   private $nome;
   private $preco;
