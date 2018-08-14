@@ -19,7 +19,9 @@ class LivroController extends Controller {
     {
         $id = Request::route('id');
 
-        $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
+        $lista = Produto::find($id);
+
+      // /  $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
 
         if(empty($lista)) {
           return "Esse produto não existe";
@@ -60,6 +62,8 @@ class LivroController extends Controller {
     public function removeProduto($id)
     {
         $id = Request::route('id');
+        $quer = Produto::find($id);
+
        $query = DB::delete("DELETE FROM livros WHERE id = ?", [$id]);
 
        return view('listaLivros');
