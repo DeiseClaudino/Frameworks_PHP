@@ -82,7 +82,7 @@ class LivroController extends Controller {
       $produto->save();
 
       return redirect()
-          ->action('ProdutoController@index')
+          ->action('ProdutoController@lista')
           ->withInput(Request::only('nome'));
         //
         // $produto->nome = Request::input('nome');
