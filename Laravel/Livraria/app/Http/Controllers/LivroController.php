@@ -10,7 +10,7 @@ class LivroController extends Controller {
   public function lista()
   {
 
-    $produto = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id");
+    $produto = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id ORDER BY nome ASC");
 
      return view('listaLivros')->withProduto($produto);
   }
