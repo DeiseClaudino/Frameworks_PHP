@@ -45,6 +45,9 @@
 
           @endforeach
         </table>
+        @if (old('nome')):
+                Produto {{old('nome')}} adicionado com sucesso!
+        @endif;
 @stop
 @extends('rodape')
 @section('rodape')
