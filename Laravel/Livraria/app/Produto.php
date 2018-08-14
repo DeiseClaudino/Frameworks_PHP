@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
+  protected $table = 'livros';
   private $id;
   private $nome;
   private $preco;
