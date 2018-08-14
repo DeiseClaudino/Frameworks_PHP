@@ -36,7 +36,7 @@
               </td>
               <td>
                 <form>
-                  <a href="/listaLivros/remove/{{$produto->id}}">
+                  <a href="{{action('LivroController@removeProduto', $produto->id)}}">
                   <input type="hidden" name="id" value="">
                   <button class="btn btn-danger">Excluir</button>
                 </form>

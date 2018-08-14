@@ -61,12 +61,10 @@ class LivroController extends Controller {
 
     public function removeProduto($id)
     {
-        $id = Request::route('id');
-        $quer = Produto::find($id);
-
-       $query = DB::delete("DELETE FROM livros WHERE id = ?", [$id]);
-
-       return view('listaLivros');
+      $produto = Produto::find($id);
+      $produto->delete();
+      return redirect()
+          ->action('ProdutoController@lista');
     }
 
     public function abreFormulario()
