@@ -86,7 +86,9 @@ class LivroController extends Controller {
         DB::insert('INSERT INTO produtos VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)',
         array($produto->nome, $produto->preco, $produto->descricao, $produto->categoria_id, $produto->isbn, $produto->tipoLivro, $produto->taxaImpressao, $produto->waterMark));
 
-        return redirect('/listaLivros')->withImput();
+        return redirect()
+        ->action('ProdutoController@lista')
+        ->withImput();
 
       }
 
