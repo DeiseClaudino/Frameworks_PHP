@@ -34,7 +34,7 @@
           <tr>
               <th>Tipo do produto</th>
               <td>
-                <input type="text" class="form-control" name="isbn">
+                <input type="text" class="form-control" name="taxaImpressao">
              </td>
           </tr>
           <tr>
