@@ -77,9 +77,7 @@ class LivroController extends Controller {
 
     public function adicionaProduto()
     {
-      $params = Request::all();
-      $produto = new Produto($params);
-      $produto->save();
+      Produto::create(Request::all());
 
       return redirect()
           ->action('ProdutoController@lista')
