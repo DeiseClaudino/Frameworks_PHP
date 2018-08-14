@@ -77,22 +77,31 @@ class LivroController extends Controller {
 
     public function adicionaProduto()
     {
+      $params = Request::all();
+      $produto = new Produto($params);
+      $produto->save();
 
-        $produto->nome = Request::input('nome');
-        $produto->preco = Request::input('preco');
-        $produto->descricao = Request::input('descricao');
-        $produto->categoria_id = Request::input('categoria_id');
-        $produto->isbn = Request::input('isbn');
-        $produto->tipoLivro = Request::input('tipoLivro');
-        $produto->taxaImpressao = Request::input('taxaImpressao');
-        $produto->waterMark = Request::input('waterMark');
-
-        DB::insert('INSERT INTO produtos VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)',
-        array($produto->nome, $produto->preco, $produto->descricao, $produto->categoria_id, $produto->isbn, $produto->tipoLivro, $produto->taxaImpressao, $produto->waterMark));
-
-        return redirect()
-        ->action('ProdutoController@lista')
-        ->withImput();
+      return redirect()
+          ->action('ProdutoController@index')
+          ->withInput(Request::only('nome'));
+        //
+        // $produto->nome = Request::input('nome');
+        // $produto->preco = Request::input('preco');
+        // $produto->descricao = Request::input('descricao');
+        // $produto->categoria_id = Request::input('categoria_id');
+        // $produto->isbn = Request::input('isbn');
+        // $produto->tipoLivro = Request::input('tipoLivro');
+        // $produto->taxaImpressao = Request::input('taxaImpressao');
+        // $produto->waterMark = Request::input('waterMark');
+        //
+        // $produto->save();
+        //
+        // // DB::insert('INSERT INTO produtos VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)',
+        // // array($produto->nome, $produto->preco, $produto->descricao, $produto->categoria_id, $produto->isbn, $produto->tipoLivro, $produto->taxaImpressao, $produto->waterMark));
+        //
+        // return redirect()
+        // ->action('ProdutoController@lista')
+        // ->withImput();
 
       }
 

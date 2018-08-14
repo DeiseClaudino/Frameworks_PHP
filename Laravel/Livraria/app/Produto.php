@@ -8,6 +8,9 @@ class Produto extends Model
 {
   protected $table = 'livros';
   public $timestamps = false;
+  protected $fillable = array('nome', 'preco', 'descricao', 'categoria', 'isbn');
+
+  
   private $id;
   private $nome;
   private $preco;
