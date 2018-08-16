@@ -1,16 +1,19 @@
 <?php namespace App\Http\Controllers;
 
+use App\Livro;
+
 use Illuminate\Support\Facades\DB;
 use Request;
-use App\Produto;
-use App\Categoria;
+
 
 class LivroController extends Controller {
 
   public function lista()
   {
+      $produto = Livro::all();
+      var_dump($produto);die;
 
-    $produto = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id ORDER BY nome ASC");
+     // $produto = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id ORDER BY nome ASC");
 
      return view('listaLivros')->withProduto($produto);
   }
@@ -62,9 +65,9 @@ class LivroController extends Controller {
     public function removeProduto($id)
     {
       $produto = Produto::find($id);
-      $produto->delete();
-      return redirect()
-          ->action('ProdutoController@lista');
+    $produto->delete();
+    return redirect()
+        ->action('ProdutoController@lista');
     }
 
     public function abreFormulario()
