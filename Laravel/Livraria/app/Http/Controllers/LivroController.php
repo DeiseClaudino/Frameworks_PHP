@@ -10,19 +10,15 @@ class LivroController extends Controller {
 
   public function lista()
   {
-      $produto = Livro::all();
-      var_dump($produto);die;
-
-     // $produto = DB::select("SELECT p.*, c.nome AS categoria_nome FROM livros AS p JOIN categorias AS c ON c.id = p.categoria_id ORDER BY nome ASC");
-
-     return view('listaLivros')->withProduto($produto);
-  }
+    $produto = Livro::all();
+    return view('listaLivros')->withProduto($produto);
+}
 
   public function buscaProduto()
     {
         $id = Request::route('id');
 
-        $lista = Produto::find($id);
+        $lista = Livro::find($id);
 
       // /  $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
 
@@ -64,10 +60,10 @@ class LivroController extends Controller {
 
     public function removeProduto($id)
     {
-      $produto = Produto::find($id);
-    $produto->delete();
-    return redirect()
-        ->action('ProdutoController@lista');
+      $produto = Livro::find($id);
+      $produto->delete();
+      return redirect()
+          ->action('LivroController@lista');
     }
 
     public function abreFormulario()
@@ -78,29 +74,11 @@ class LivroController extends Controller {
 
     public function adicionaProduto()
     {
-      Produto::create(Request::all());
+      Livro::create(Request::all());
 
       return redirect()
           ->action('ProdutoController@lista')
           ->withInput(Request::only('nome'));
-        //
-        // $produto->nome = Request::input('nome');
-        // $produto->preco = Request::input('preco');
-        // $produto->descricao = Request::input('descricao');
-        // $produto->categoria_id = Request::input('categoria_id');
-        // $produto->isbn = Request::input('isbn');
-        // $produto->tipoLivro = Request::input('tipoLivro');
-        // $produto->taxaImpressao = Request::input('taxaImpressao');
-        // $produto->waterMark = Request::input('waterMark');
-        //
-        // $produto->save();
-        //
-        // // DB::insert('INSERT INTO produtos VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)',
-        // // array($produto->nome, $produto->preco, $produto->descricao, $produto->categoria_id, $produto->isbn, $produto->tipoLivro, $produto->taxaImpressao, $produto->waterMark));
-        //
-        // return redirect()
-        // ->action('ProdutoController@lista')
-        // ->withImput();
 
       }
 
