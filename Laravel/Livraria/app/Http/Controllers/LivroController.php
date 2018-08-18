@@ -20,12 +20,10 @@ class LivroController extends Controller {
 
         $lista = Livro::find($id);
 
-      // /  $lista =  DB::select("SELECT * FROM livros WHERE id = ?", [$id]);
-
         if(empty($lista)) {
           return "Esse produto não existe";
         }
-        return view('alteraLivros')->withProduto($lista[0]);
+        return view('alteraLivros')->withProduto($lista);
     }
 
   //   public function alteraProduto(Produto $produto)
