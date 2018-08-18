@@ -32,15 +32,6 @@
               <td>
                   <select name="categoria_id" class="form-control">
 
-                          @foreach ($categorias as $categoria) :
-                              $essaEhACategoria = $produto->getCategoria()->getId() == $categoria->getId();
-                              $selecao = $essaEhACategoria ? "selected='selected'" : "";
-
-                              <option value="<?=$categoria->getId()?>" <?=$selecao?>>
-                                <?=$categoria->getNome()?>
-                              </option>
-
-                        @endforeach
                 </select>
             </td>
           </tr>
