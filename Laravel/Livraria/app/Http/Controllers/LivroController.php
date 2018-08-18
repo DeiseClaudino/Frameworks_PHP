@@ -14,10 +14,8 @@ class LivroController extends Controller {
     return view('listaLivros')->withProduto($produto);
 }
 
-  public function buscaProduto()
+  public function buscaProduto($id)
     {
-        $id = Request::route('id');
-
         $lista = Livro::find($id);
 
         if(empty($lista)) {
