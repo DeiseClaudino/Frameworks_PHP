@@ -44,6 +44,12 @@
           <tr>
               <th>Tipo do produto</th>
               <td>
+                <select name="tipoProduto" class="form-control">
+                  <optgroup label="Livros">
+                    <option>Livro Fisico</option>
+                    <option>Ebook</option>
+                  </optgroup>
+                 </select>
              </td>
           </tr>
           <tr>
