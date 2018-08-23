@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'LoginController@login/{email}/{senha}');
+Route::get('/', 'LoginController@login');
 
 Route::get('/listaLivros', 'LivroController@lista');
 
