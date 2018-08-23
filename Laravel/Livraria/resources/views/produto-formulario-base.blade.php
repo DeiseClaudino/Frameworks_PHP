@@ -26,20 +26,30 @@
             </tr>
             <tr>
               <th>Categoria</th>
-
               <td>
+                <select name="categoria" class="form-control">
+                  <option>Terror</option>
+                  <option>Aventura</option>
+                  <option>Ação</option>
+                  <option>Suspense</option>
+                  <option>Drama</option>
+                  <option>Comédia</option>
+                  <option>Biografia</option>
+                  <option>Didático</option>
+                  <option>Anime/Quadrinhos </option>
+                </select>
 
             </td>
           </tr>
           <tr>
               <th>Tipo do produto</th>
               <td>
-                <input type="text" class="form-control" name="taxaImpressao">
              </td>
           </tr>
           <tr>
               <th>ISBN (caso seja um Livro)</th>
               <td>
+                <input type="text" class="form-control" name="isbn">
             </td>
           <tr>
           </tr>
