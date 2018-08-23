@@ -5,7 +5,7 @@ namespace App\Ebook;
 use Illuminate\Database\Eloquent\Model;
 use App\Produto;
 
-class Ebook extends Model, Produto
+class Ebook extends Model
 {
     private $waterMark;
   public function getWatermark()
