@@ -21,8 +21,7 @@
               <td>{{ $produto->nome }}</td>
               <td>{{ $produto->preco }}</td>
               <td>{{ $produto->descricao }}</td>
-              <td>
-              </td>
+              <td>{{ $produto->categoria }}</td>
               <td>{{ $produto->isbn }}</td>
               <td>{{ $produto->tipoLivro }}</td>
               <td>{{ $produto->taxaImpressao }}</td>
@@ -36,7 +35,7 @@
               </td>
               <td>
                 <form>
-                  <a href="{{action('LivroController@removeProduto', $produto->id)}}">
+                  <a href="/listaLivros/deletar/{{$produto->id}}">
                   <input type="hidden" name="id" value="">
                   <button class="btn btn-danger">Excluir</button>
                 </form>
