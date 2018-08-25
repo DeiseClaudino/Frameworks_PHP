@@ -70,16 +70,6 @@ class LivroController extends Controller {
 
     public function adicionaProduto()
     {
-      $validator = Validator::make(
-      ['nome' => Request::input('nome')],
-      ['nome' => 'required|min:5']
-      );
-
-      if ($validator->fails())
-     {
-       return redirect()
-         ->action('LivroController@novo');
-     }
       Livro::create(Request::all());
 
       return redirect()
