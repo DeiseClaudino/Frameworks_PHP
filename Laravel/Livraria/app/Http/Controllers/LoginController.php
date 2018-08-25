@@ -1,18 +1,18 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use Request;
+
 
 class LoginController extends Controller
 {
-  function login()
+  function login(LoginRequest $loginRequest)
 {
-    // $senhaMd5 = md5($senha);
-    // $email = $email;
-    //
-    // DB::table('usuarios')
-    //         ->where('email', '=', $email)
-    //         ->andWhere('email', '=', $senhaMd5)
-    //         ->get();
+  if ($loginRequest == $loginRequest) {
+    return view('listaLivros');
+  }
+
 
   return view('login');
 }
