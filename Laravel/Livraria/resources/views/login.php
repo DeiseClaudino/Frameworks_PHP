@@ -7,6 +7,17 @@
       <title>Minha Livraria</title>
   </head>
 <body>
+  
+  @if (count($errors) > 0)
+  <div class="alert alert-danger">
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
+
   <form class="form-signin" method="post">
     <div class="text-center mb-4">
       <img class="mb-4" src="/livro.png" alt="" width="82" height="82">
@@ -25,6 +36,7 @@
     </div>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
 
   </form>
 </body>
