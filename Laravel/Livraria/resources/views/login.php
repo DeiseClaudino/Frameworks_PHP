@@ -7,7 +7,7 @@
       <title>Minha Livraria</title>
   </head>
 <body>
-  
+
   @if (count($errors) > 0)
   <div class="alert alert-danger">
     <ul>
@@ -26,12 +26,12 @@
     </div>
 
     <div class="form-label-group">
-      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" value="{{ old('email') }}" required autofocus>
       <label for="inputEmail">Email address</label>
     </div>
 
     <div class="form-label-group">
-      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" value="{{ old('password') }}" required>
       <label for="inputPassword">Password</label>
     </div>
 
