@@ -28,4 +28,12 @@ class LoginRequest extends FormRequest
             'password' => 'required|numeric'
         ];
     }
+
+    public function messages()
+    {
+      return [
+          'required' => 'Usuário ou senha inválidos! tente novamente',
+      ];
+
+    }
 }
