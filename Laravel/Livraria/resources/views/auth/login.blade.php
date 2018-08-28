@@ -1,16 +1,19 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-                        @csrf
+                      
+                      <div class="text-center mb-4">
+                        <img class="mb-4" src="/livro.png" alt="" width="82" height="82">
+                        <p><cite>"Pouco conhecimento faz com que as pessoas se sintam orgulhosas. Muito conhecimento, que se sintam humildes."</cite> Leonardo da Vinci</p>
+                      </div>
 
+                        @csrf
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
