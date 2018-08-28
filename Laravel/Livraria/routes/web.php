@@ -1,7 +1,5 @@
 <?php
 
-Route::get('/', 'LoginController@login');
-
 Route::get('/listaLivros', 'LivroController@lista');
 
 Route::get('/listaLivros/alterar/{id}', 'LivroController@buscaProduto')->where('id', '[0-9]+');
@@ -12,9 +10,6 @@ Route::get('/formulario', 'LivroController@abreFormulario');
 
 Route::post('/adicionarNovo', 'LivroController@adicionaProduto');
 
-Route::get('home', 'HomeController@index');
+Auth::routes();
 
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+Route::get('/home', 'HomeController@index')->name('home');
