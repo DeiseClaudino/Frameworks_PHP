@@ -8,6 +8,12 @@ use Request;
 
 class LivroController extends Controller {
 
+  public function __construct()
+{
+    $this->middleware('auth',
+        ['only' => ['adicionaProduto', 'removeProduto']]);
+}
+
   public function lista()
   {
     $produto = Livro::all();
