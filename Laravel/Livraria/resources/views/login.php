@@ -7,17 +7,6 @@
       <title>Minha Livraria</title>
   </head>
 <body>
-
-  @if (count($errors) > 0)
-  <div class="alert alert-danger">
-    <ul>
-      @foreach ($errors->all() as $error)
-      <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
-  @endif
-
   <form class="form-signin" method="post">
     <div class="text-center mb-4">
       <img class="mb-4" src="/livro.png" alt="" width="82" height="82">
@@ -26,12 +15,12 @@
     </div>
 
     <div class="form-label-group">
-      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" value="{{ old('email') }}" required autofocus>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputEmail">Email address</label>
     </div>
 
     <div class="form-label-group">
-      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" value="{{ old('password') }}" required>
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
       <label for="inputPassword">Password</label>
     </div>
 
