@@ -11,3 +11,10 @@ Route::get('/listaLivros/remove/{id}', 'LivroController@removeProduto')->where('
 Route::get('/formulario', 'LivroController@abreFormulario');
 
 Route::post('/adicionarNovo', 'LivroController@adicionaProduto');
+
+Route::get('home', 'HomeController@index');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
