@@ -24,8 +24,6 @@
           </li>
         </ul>
       </div>
-
-      <a class="btn btn-outline-secondary">Logout</a>
     </header>
 
   <body>
