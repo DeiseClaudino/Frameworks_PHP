@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="/listaLivros" class="alert-link">See your books list here</a>
                 </div>
             </div>
         </div>
