@@ -12,7 +12,7 @@ class Livro extends Model
 
       public function categoria()
       {
-        $this->belongsTo('App\Categoria');
+        return $this->belongsTo('App\Categoria');
       }
 
 }

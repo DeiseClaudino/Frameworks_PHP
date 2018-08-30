@@ -8,6 +8,6 @@ class Categoria extends Model
 {
   public function livros()
   {
-    $this->hasMany('App\Livro');
+    return $this->hasMany('App\Livro');
   }
 }
