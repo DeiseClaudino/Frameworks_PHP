@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Livro;
-
+use App\Categoria;
 use Illuminate\Support\Facades\DB;
 use Request;
 
