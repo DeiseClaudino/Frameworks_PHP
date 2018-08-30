@@ -9,10 +9,9 @@ use Request;
 class LivroController extends Controller {
 
   public function __construct()
-{
-    $this->middleware('auth',
-        ['only' => ['adicionaProduto', 'removeProduto']]);
-}
+  {
+    $this->middleware('auth');
+  }
 
   public function lista()
   {
