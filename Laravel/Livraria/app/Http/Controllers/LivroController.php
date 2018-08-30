@@ -69,7 +69,7 @@ class LivroController extends Controller {
 
     public function abreFormulario()
     {
-      return view('adiciona-livro');
+      return view('adiciona-livro')->with('categorias', Categoria::all());
     }
 
 
