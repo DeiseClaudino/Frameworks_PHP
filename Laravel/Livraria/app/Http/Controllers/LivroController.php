@@ -22,6 +22,7 @@ class LivroController extends Controller {
   public function buscaProduto($id)
     {
         $lista = Livro::find($id);
+        $categorias = Categoria::find($id);
 
         if(empty($lista)) {
           return "Esse produto não existe";
