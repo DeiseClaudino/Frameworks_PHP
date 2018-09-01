@@ -24,10 +24,11 @@ class LivroController extends Controller {
         $lista = Livro::find($id);
         $categorias = Categoria::find($id);
 
+
         if(empty($lista)) {
           return "Esse produto não existe";
         }
-        return view('alteraLivros')->withProduto($lista);
+        return view('alteraLivros', ['produto' => $lista, 'categorias' => $categorias] );
     }
 
   //   public function alteraProduto(Produto $produto)
