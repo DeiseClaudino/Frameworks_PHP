@@ -28,19 +28,14 @@
             </tr>
             <tr>
               <th>Categoria</th>
-
               <td>
                 <select name="categoria_id" class="form-control">
-                  <option>Terror</option>
-                  <option>Aventura</option>
-                  <option>Ação</option>
-                  <option>Suspense</option>
-                  <option>Drama</option>
-                  <option>Comédia</option>
-                  <option>Biografia</option>
-                  <option>Didático</option>
-                  <option>Anime/Quadrinhos </option>
-             		</select>
+                  @foreach ($categorias as $c):
+
+                  <option value="{{$c->id}}">{{$c->nome}}</option>
+                  @endforeach;
+
+                </select>
 
             </td>
           </tr>
