@@ -19,9 +19,6 @@
           <li class="nav-item">
             <a class="nav-link " href="{{action('LivroController@abreFormulario')}}">Inserir +</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" >Contatos</a>
-          </li>
         </ul>
       </div>
     </header>
