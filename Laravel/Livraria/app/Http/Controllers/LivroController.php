@@ -23,8 +23,10 @@ class LivroController extends Controller {
     {
         $lista = Livro::find($id);
         $categorias = Categoria::find($id);
-//        $lista = Livro::find($id)->join('categorias.nome', 'categorias.id', '=', 'livro.categoria_id');
-// select l.*, c.nome from livros l join categorias c on l.categoria_id = c.id
+
+        // echo "<pre>";
+        // var_dump($lista, $categorias); die("resultados esperados?");
+
         if(empty($lista)) {
           return "Esse produto não existe";
         }
