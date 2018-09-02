@@ -30,9 +30,11 @@
               <th>Categoria</th>
               <td>
                 <select name="categoria_id" class="form-control">
-                  @foreach ($categorias as $c):
+                  @foreach ($categorias as $categoria):
+                    $essaEhACategoria = $produto->categoria_id == $categoria->id;
+                    $selecao = $essaEhACategoria ? "selected='selected'" : "";
 
-                  <option value="{{$produto->categoria_id}}">{{$produto->categoria_id}}</option>
+                    <option value="{{$categoria->id}}" {{$selecao}} >{{$categoria->nome}}</option>
                   @endforeach;
 
                 </select>
