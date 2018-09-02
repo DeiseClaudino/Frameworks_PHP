@@ -31,11 +31,10 @@
               <td>
                 <select name="categoria_id" class="form-control">
                   @foreach ($categorias as $categoria):
-                    $essaEhACategoria = $produto->categoria_id == $categoria->id;
-                    $selecao = $essaEhACategoria ? "selected='selected'" : "";
-
-                    <option value="{{$categoria->id}}" {{$selecao}} >{{$categoria->nome}}</option>
-                  @endforeach;
+                    <option value="{{$produto->categoria->id}}">
+                      {{$produto->categoria->nome}}
+                    </option>
+                  @endforeach
 
                 </select>
 
