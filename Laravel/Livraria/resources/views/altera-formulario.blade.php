@@ -31,7 +31,7 @@
               <td>
                 <select name="categoria_id" class="form-control">
                   @foreach ($categorias as $categoria):
-                  
+
                     <option value="{{$categoria->id}}" {{$produto->categoria->id == $categoria->id ? "selected='selected'" : ""}}>
                       {{$categoria->nome}}
                     </option>
@@ -65,8 +65,11 @@
              </td>
           </tr>
           <tr>
-              <th>ISBN (caso seja um Livro)</th>
+              <th>ISBN</th>
               <td>
+
+                <input type="text" name="isbn" class="form-control"
+                value="{{$produto->isbn}}">
 
             </td>
           <tr>
@@ -74,13 +77,17 @@
             <th>Taxa de Impressão (caso seja um Livro Físico)</th>
               <td>
 
+                <input type="text" name="taxaImpressao" class="form-control"
+                value="{{$produto->taxaImpressao}}" >
+
               </td>
 
           </tr>
           <tr>
               <th>WaterMark (caso seja um Ebook)</th>
               <td>
-
+                <input type="text" name="WaterMark" class="form-control"
+                value="{{$produto->waterMark}}" >
               </td>
             </tr>
             @yield('outros')
