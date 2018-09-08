@@ -22,7 +22,7 @@ class LivroController extends Controller {
   public function buscaProduto($id)
     {
         $lista = Livro::find($id);
-        $categorias = Categoria::find($id);
+        $categorias = Categoria::all();
 
         // echo "<pre>";
         // var_dump($lista, $categorias); die("resultados esperados?");
