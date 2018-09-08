@@ -31,13 +31,12 @@
               <td>
                 <select name="categoria_id" class="form-control">
                   @foreach ($categorias as $categoria):
-                    $categoria = $produto->categoria->id == $categoria->id ? "selected='selected'" : "";
-
-                    <option value="{{$produto->categoria->id}}"  {{ $categoria }}>
+                  
+                    <option value="{{$categoria->id}}" {{$produto->categoria->id == $categoria->id ? "selected='selected'" : ""}}>
                       {{$categoria->nome}}
                     </option>
-                  @endforeach
 
+                  @endforeach
                 </select>
 
             </td>
