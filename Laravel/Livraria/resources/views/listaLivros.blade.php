@@ -33,12 +33,12 @@
                 Alterar
                 </a>
               </td>
+              
               <td>
-                <form>
-                  <a href="/listaLivros/deletar/{{$produto->id}}">
-                  <input type="hidden" name="id" value="">
-                  <button class="btn btn-danger">Excluir</button>
-                </form>
+                  <a class="btn btn-danger"
+                    href="/listaLivros/remove/{{$produto->id}}">
+                  Excluir
+                </a>
               </td>
             </tr>
 
