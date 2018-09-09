@@ -2,6 +2,7 @@
 
 use App\Livro;
 use App\Categoria;
+use App\Http\Requests\LivrosRequest;
 use Illuminate\Support\Facades\DB;
 use Request;
 
@@ -23,7 +24,7 @@ class LivroController extends Controller {
     {
         $lista = Livro::find($id);
         $categorias = Categoria::all();
-        
+
         return view('alteraLivros', ['produto' => $lista, 'categorias' => $categorias] );
     }
 
@@ -61,8 +62,7 @@ class LivroController extends Controller {
     {
       $produto = Livro::find($id);
       $produto->delete();
-      return redirect()
-          ->action('LivroController@lista');
+      return redirect('/listaLivros');
     }
 
     public function abreFormulario()
@@ -71,13 +71,13 @@ class LivroController extends Controller {
     }
 
 
-    public function adicionaProduto()
+    public function adicionaProduto(LivrosRequest $request)
     {
-      Livro::create(Request::all());
+      Livro::create($request->all());
 
-      return redirect()
-          ->action('ProdutoController@lista')
-          ->withInput(Request::only('nome'));
+      return redirect('/listaLivros')->withInput();
+          // ->action('ProdutoController@lista')
+          // ->withInput(Request::only('nome'));
 
 
       }
