@@ -2,10 +2,9 @@
 
 use App\Livro;
 use App\Categoria;
-use App\Http\Requests\LivrosRequest;
 use Illuminate\Support\Facades\DB;
-use Request;
-
+use App\Http\Requests\LivrosRequest;
+use Illuminate\Support\Facades\Request;
 
 class LivroController extends Controller {
 
@@ -70,16 +69,13 @@ class LivroController extends Controller {
       return view('adiciona-livro')->with('categorias', Categoria::all());
     }
 
+  public function adicionaProduto(LivrosRequest $request){
 
-    public function adicionaProduto(LivrosRequest $request)
-    {
       Livro::create($request->all());
 
-      return redirect('/listaLivros')->withInput();
-          // ->action('ProdutoController@lista')
-          // ->withInput(Request::only('nome'));
-
-
-      }
+      return redirect()
+          ->action('LivroController@lista')
+          ->withInput(Request::only('nome'));
+  }
 
 }
