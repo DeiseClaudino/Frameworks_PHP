@@ -33,7 +33,7 @@
                 Alterar
                 </a>
               </td>
-              
+
               <td>
                   <a class="btn btn-danger"
                     href="/listaLivros/remove/{{$produto->id}}">
@@ -44,12 +44,6 @@
 
           @endforeach
         </table>
-        @if (old('nome')):
-            <div class="alert alert-success">
-              <strong>Sucesso!</strong>
-                Produto {{old('nome')}} adicionado com sucesso!
-            </div>
-        @endif;
 @stop
 @extends('rodape')
 @section('rodape')
