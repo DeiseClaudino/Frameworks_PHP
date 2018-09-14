@@ -1,10 +1,10 @@
 @extends('produto-formulario-base')
 @section('outros')
       <h1>Adicionar Livros</h1>
-      <form action="/adicionarNovo" method="post">
+      <form method="post" action="/adicionarNovo">
             <tr>
               <td>
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
               </td>
             </tr>
         @stop
