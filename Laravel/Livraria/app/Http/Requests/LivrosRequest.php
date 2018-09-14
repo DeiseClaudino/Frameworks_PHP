@@ -27,8 +27,8 @@ class LivrosRequest extends FormRequest
           'nome' => 'required|max:100',
           'preco' => 'required|numeric',
           'descricao' => 'required|max:255',
-          'categoria',
-          'tipoProduto',
+          'categoria' => 'required|max:255',
+          'tipoProduto' => 'required|max:255',
           'ISBN' => 'required|max:255',
           'taxaImpressao' => 'required|max:255',
           'waterMark' => 'required|max:255',
@@ -36,4 +36,10 @@ class LivrosRequest extends FormRequest
 
         ];
     }
+    public function messages()
+    {
+      return [
+          'required' => 'O :attribute é obrigatório',
+      ];
+  }
 }
