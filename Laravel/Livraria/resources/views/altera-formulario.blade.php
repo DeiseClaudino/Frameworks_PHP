@@ -50,7 +50,7 @@
                       $tipos = array("Livro Fisico", "Ebook");
                       foreach ($tipos as $tipo) :
                         $tipoSemEspaco = str_replace(" ", "", $tipo);
-                          $esseEhOTipo = get_class($produto) == $tipoSemEspaco;
+                          $esseEhOTipo = $produto->tipoLivro == $tipoSemEspaco;
                           $selecao = $esseEhOTipo ? "selected='selected'" : "";
                       ?>
                           <option value="<?=$tipoSemEspaco?>" <?=$selecao?>>
