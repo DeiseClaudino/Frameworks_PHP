@@ -1,6 +1,9 @@
 @extends('cabecalho')
 @section('conteudo')
   <table class="table table-striped table-bordered table-hover">
+    <input type="hidden"
+       name="_token" value="{{ csrf_token() }}" />
+
           <tr>
               <th>Nome</th>
               <td>
@@ -37,17 +40,19 @@
 
             </td>
           </tr>
+
           <tr>
               <th>Tipo do produto</th>
               <td>
-                <select name="tipoProduto" class="form-control">
-                  <optgroup label="Livros">
-                    <option>Livro Fisico</option>
-                    <option>Ebook</option>
-                  </optgroup>
-                 </select>
+                 <select name="tipoLivro" class="form-control">
+                   <optgroup label="Livros">
+                     <option value="LivroFisico">Livro Fisico</option>
+                     <option value="Ebook">Ebook</option>
+                   </optgroup>
+                  </select>
              </td>
-          </tr>
+
+
           <tr>
               <th>ISBN (caso seja um Livro)</th>
               <td>
