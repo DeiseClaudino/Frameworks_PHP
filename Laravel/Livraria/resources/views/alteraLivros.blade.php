@@ -1,11 +1,11 @@
 @extends('altera-formulario')
 @section('outros')
   <h1>Alterando: {{$produto->nome}} </h1>
-  <form method="post>
+  <form method="get" href="/listaLivros/alterado">
 
       <tr>
         <td>
-          <a class="btn btn-primary" href="/listaLivros/alterado">Alterar</a>
+          <button class="btn btn-primary">Alterar</button>
         </td>
       </tr>
   </table>
