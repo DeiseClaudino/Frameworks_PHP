@@ -32,7 +32,7 @@
                 <select name="categoria_id" class="form-control">
                   @foreach ($categorias as $categoria):
 
-                    <option value="{{$categoria->id}}" {{$produto->categoria->id == $categoria->id ? "selected='selected'" : ""}}>
+                    <option value="{{$categoria->id}}" {{$produto->categoria_id == $categoria->id ? "selected='selected'" : ""}}>
                       {{$categoria->nome}}
                     </option>
 
