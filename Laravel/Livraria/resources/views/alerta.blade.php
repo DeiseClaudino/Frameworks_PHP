@@ -1,8 +1,8 @@
-<!-- @extends('cabecalho')
+@extends('cabecalho')
 
 @section('conteudo')
 <div class="alert alert-success">
-  O produto {{$produto->nome}} foi adicionado com sucesso!
+  O produto {{$nome}} foi adicionado com sucesso!
 </div>
 
-@stop -->
+@stop
