@@ -1,29 +1,24 @@
 @extends('cabecalho')
 @section('conteudo')
+<form action="/adicionarnovo" method="get">
   <table class="table table-striped table-bordered table-hover">
     <input type="hidden"
        name="_token" value="{{ csrf_token() }}" />
-
           <tr>
               <th>Nome</th>
               <td>
-
                    <input class="form-control" type="text" name="nome">
-
               </td>
           </tr>
           <tr>
               <th>Preço</th>
               <td>
-
                   <input  class="form-control" type="number" step="0.01" name="preco">
               </td>
-
           </tr>
           <tr>
               <th>Descrição</th>
                 <td>
-
                   <textarea class="form-control" name="descricao"></textarea>
                 </td>
             </tr>
@@ -32,15 +27,11 @@
               <td>
                 <select name="categoria_id" class="form-control">
                   @foreach ($categorias as $c):
-
                   <option value="{{$c->id}}">{{$c->nome}}</option>
                   @endforeach;
-
                 </select>
-
             </td>
           </tr>
-
           <tr>
               <th>Tipo do produto</th>
               <td>
@@ -51,8 +42,6 @@
                    </optgroup>
                   </select>
              </td>
-
-
           <tr>
               <th>ISBN (caso seja um Livro)</th>
               <td>
@@ -63,17 +52,14 @@
             <th>Taxa de Impressão (caso seja um Livro Físico)</th>
               <td>
                   <input type="text" class="form-control" name="taxaImpressao">
-
               </td>
-
           </tr>
           <tr>
               <th>WaterMark (caso seja um Ebook)</th>
               <td>
-
-                <input type="text" class="form-control" name="WaterMark">
+                <input type="text" class="form-control" name="waterMark">
               </td>
             </tr>
             @yield('outros')
-
   @stop
+</form>
