@@ -3,8 +3,9 @@
 use App\Livro;
 use App\Categoria;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
 // use App\Http\Requests;
-use Request;
+
 
 class LivroController extends Controller {
 
@@ -67,22 +68,16 @@ class LivroController extends Controller {
       $taxaImpressao = Request::input('taxaImpressao');
       $waterMark = Request::input('waterMark');
 
-      DB::insert('INSERT INTO livros(nome, preco,
+      DB::insert('insert into livros (nome, preco,
         descricao, categoria_id,
        tipoLivro, isbn,
-       taxaImpressao, waterMark)
-       VALUES(?, ?, ?, ?, ?, ?, ?, ?)',
-        array($nome, $preco, $descricao, $categoria_id,
-      $tipoLivro, $isbn, $taxaImpressao, $waterMark));
+       taxaImpressao, waterMark) values (?, ?, ?, ?, ?, ?, ?, ?)',
+          array($nome, $preco, $descricao, $categoria_id,
+           $tipoLivro, $isbn, $taxaImpressao, $waterMark));
 
-      return view('alerta')->with('nome', $nome);
-
-      // Livro::create($request->all());
-      //
-      // return redirect()
-      //     ->action('LivroController@lista')
-      //     ->withInput(Request::only('nome'));
+      return redirect()
+          ->action('LivroController@lista')
+          ->withInput(Request::only('nome'));
   }
-
 
 }
