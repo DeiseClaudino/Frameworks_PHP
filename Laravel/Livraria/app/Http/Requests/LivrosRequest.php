@@ -27,8 +27,6 @@ class LivrosRequest extends FormRequest
           'nome' => 'required|max:100',
           'preco' => 'required|numeric',
           'descricao' => 'required|max:255',
-          'categoria' => 'required|max:255',
-          'tipoProduto' => 'required|max:255',
           'ISBN' => 'required|max:255',
           'taxaImpressao' => 'required|max:255',
           'waterMark' => 'required|max:255',
