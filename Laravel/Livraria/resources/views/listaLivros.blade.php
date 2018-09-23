@@ -21,7 +21,7 @@
               <td>{{ $produto->nome }}</td>
               <td>{{ $produto->preco }}</td>
               <td>{{ $produto->descricao }}</td>
-              <td>{{ $produto->categoria->nome }}</td>
+              <td>{{ $produto->categoria->nome}}</td>
               <td>{{ $produto->isbn }}</td>
               <td>{{ $produto->tipoLivro }}</td>
               <td>{{ $produto->taxaImpressao }}</td>
