@@ -3,9 +3,8 @@
 use App\Livro;
 use App\Categoria;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\LivrosRequest;
 use Illuminate\Support\Facades\Request;
-// use App\Http\Requests;
-
 
 class LivroController extends Controller {
 
@@ -31,8 +30,6 @@ class LivroController extends Controller {
 
     public function alteraProduto(LivrosRequest $request)
     {
-      $livro = Livro::find($id);
-
       $livro->nome = $request->nome;
       $livro->preco = $request->preco;
       $livro->descricao = $request->descricao;
@@ -57,27 +54,11 @@ class LivroController extends Controller {
       return view('adiciona-livro')->with('categorias', Categoria::all());
     }
 
-    public function adicionaProduto(){
+    public function adicionaProduto(LivrosRequest $request){
 
-      $nome = Request::input('nome');
-      $preco = Request::input('preco');
-      $descricao = Request::input('descricao');
-      $categoria_id = Request::input('categoria_id');
-      $tipoLivro = Request::input('tipoLivro');
-      $isbn = Request::input('isbn');
-      $taxaImpressao = Request::input('taxaImpressao');
-      $waterMark = Request::input('waterMark');
-
-      DB::insert('insert into livros (nome, preco,
-        descricao, categoria_id,
-       tipoLivro, isbn,
-       taxaImpressao, waterMark) values (?, ?, ?, ?, ?, ?, ?, ?)',
-          array($nome, $preco, $descricao, $categoria_id,
-           $tipoLivro, $isbn, $taxaImpressao, $waterMark));
-
+      Livro::create($request->all());
       return redirect()
           ->action('LivroController@lista')
           ->withInput(Request::only('nome'));
-  }
-
+        }
 }
