@@ -10,7 +10,7 @@ Route::get('/listaLivros/remove/{id}', 'LivroController@removeProduto');
 
 Route::get('/formulario', 'LivroController@abreFormulario');
 
-Route::get('/adicionarnovo', 'LivroController@adicionaProduto');
+Route::post('/adicionarnovo', 'LivroController@adicionaProduto');
 
 Auth::routes();
 

@@ -1,3 +1,4 @@
+<link rel="shortcut icon" type="image/png" href="/icon.png"/>
 @extends('produto-formulario-base')
 @section('outros')
 @if ($errors->any())
