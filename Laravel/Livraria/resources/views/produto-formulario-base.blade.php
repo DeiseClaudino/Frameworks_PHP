@@ -1,6 +1,6 @@
 @extends('cabecalho')
 @section('conteudo')
-<form action="/adicionarnovo" method="get">
+<form action="/adicionarnovo" method="post">
   <table class="table table-striped table-bordered table-hover">
     <input type="hidden"
        name="_token" value="{{ csrf_token() }}" />
@@ -43,7 +43,7 @@
                   </select>
              </td>
           <tr>
-              <th>ISBN (caso seja um Livro)</th>
+              <th>ISBN</th>
               <td>
                 <input type="text" class="form-control" name="isbn">
             </td>
