@@ -25,22 +25,18 @@ class LivroController extends Controller {
         $categorias = Categoria::all();
 
         return view('alteraLivros', ['produto' => $lista, 'categorias' => $categorias] );
+
     }
 
 
-    public function alteraProduto(LivrosRequest $request)
+    public function alteraProduto(LivrosRequest $request, $id)
     {
-      $livro->nome = $request->nome;
-      $livro->preco = $request->preco;
-      $livro->descricao = $request->descricao;
-      $livro->categoria_id = $request->categoria->id;
-      $livro->tipoLivro = $request->tipoLivro;
-      $livro->isbn = $request->isbn;
-      $livro->taxaImpressao = $request->taxaImpressao;
-      $livro->waterMark = $request->waterMark;
+      Livro::find($id)->update($request->all());
 
-      $livro->save();
-    }
+      return redirect()
+          ->action('LivroController@lista')
+          ->withInput(Request::only('nome'));
+      }
 
     public function removeProduto($id)
     {
