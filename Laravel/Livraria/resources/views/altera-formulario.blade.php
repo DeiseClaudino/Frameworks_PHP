@@ -1,5 +1,6 @@
 @extends('cabecalho')
 @section('conteudo')
+<form method="get" href="/listaLivros/alterado/{id}">
   <table class="table table-striped table-bordered table-hover">
           <tr>
               <th>Nome</th>
@@ -44,7 +45,7 @@
           <tr>
               <th>Tipo do produto</th>
               <td>
-                 <select name="tipoProduto" class="form-control">
+                 <select name="tipoLivro" class="form-control">
                    <optgroup label="Livros">
                      <?php
                       $tipos = array("Livro Fisico", "Ebook");
@@ -91,5 +92,5 @@
               </td>
             </tr>
             @yield('outros')
-
+</form>
   @stop
