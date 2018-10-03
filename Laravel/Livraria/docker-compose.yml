@@ -24,7 +24,7 @@ services:
       working_dir: /var/www
       volumes:
         - ./docker/mysql/data:/var/lib/mysql
-        - ./docker/mysql/init/batch_control.sql:/docker-entrypoint-initdb.d/batch_control.sql
+        - ./docker/mysql/init/batch_control.sql:/docker-entrypoint-initdb.d/Livraria_tcc.sql
       environment:
         - MYSQL_ROOT_PASSWORD=
         - MYSQL_DATABASE=Livraria_tcc
