@@ -3,7 +3,7 @@
   <h1>Alterando: {{$produto->nome}} </h1>
       <tr>
         <td>
-          <button class="btn btn-primary">Alterar</button>
+          <button type="submit" class="btn btn-primary">Alterar</button>
         </td>
       </tr>
   </table>
