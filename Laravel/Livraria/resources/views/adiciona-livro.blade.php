@@ -16,6 +16,7 @@
                 <button type="submit" class="btn btn-primary">Adicionar</button>
               </td>
             </tr>
+          </table>
         @stop
 @extends('rodape')
 @section('rodape')
