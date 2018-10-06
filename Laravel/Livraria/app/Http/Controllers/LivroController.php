@@ -24,14 +24,13 @@ class LivroController extends Controller {
         $lista = Livro::find($id);
         $categorias = Categoria::all();
 
-        return view('alteraLivros', ['produto' => $lista, 'categorias' => $categorias] );
-
+        return view('alteraLivros', ['produto' => $lista, 'categorias' => $categorias]);
     }
 
 
-    public function alteraProduto(LivrosRequest $request, $id)
+    public function alteraProduto(LivrosRequest $request)
     {
-      Livro::find($id)->update($request->all());
+      Livro::find($request->id)->update($request->all());
 
       return redirect()
           ->action('LivroController@lista')
