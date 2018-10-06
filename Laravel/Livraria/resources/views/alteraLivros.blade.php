@@ -1,3 +1,5 @@
+<link rel="shortcut icon" type="image/png" href="/icon.png"/>
+
 @extends('altera-formulario')
 @section('outros')
   <h1>Alterando: {{$produto->nome}} </h1>
