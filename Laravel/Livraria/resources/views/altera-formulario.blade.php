@@ -1,6 +1,6 @@
 @extends('cabecalho')
 @section('conteudo')
-<form method="get" href="/listaLivros/alterado/{id}">
+<form action="/listaLivros/alterado/{{$produto->id}}" method="get">
   <table class="table table-striped table-bordered table-hover">
           <tr>
               <th>Nome</th>
