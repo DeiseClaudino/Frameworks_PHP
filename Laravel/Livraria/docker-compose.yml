@@ -24,11 +24,11 @@ services:
       working_dir: /var/www
       volumes:
         - ./docker/mysql/data:/var/lib/mysql
-        - ./docker/mysql/init/batch_control.sql:/docker-entrypoint-initdb.d/Livraria_tcc.sql
+        - ./docker/mysql/init/Livraria_tcc.sql:/docker-entrypoint-initdb.d/Livraria_tcc.sql
       environment:
-        - MYSQL_ROOT_PASSWORD=
+        - MYSQL_ROOT_PASSWORD=''
         - MYSQL_DATABASE=Livraria_tcc
         - MYSQL_USER=root
-        - MYSQL_PASSWORD=
+        - MYSQL_PASSWORD=''
       ports:
         - "8082:3306"
