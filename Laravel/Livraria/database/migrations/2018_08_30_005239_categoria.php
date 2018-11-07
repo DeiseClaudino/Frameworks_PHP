@@ -16,6 +16,7 @@ class Categoria extends Migration
       Schema::create('categorias', function(Blueprint $table)
       {
           $table->increments('id');
+          $table->string('nome', 255);
           $table->timestamps();
       });
     }
