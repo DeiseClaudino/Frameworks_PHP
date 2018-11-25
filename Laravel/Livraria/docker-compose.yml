@@ -11,9 +11,9 @@ volumes:
 services:
 
   # MySQL (5.7)
-  mysql:
-    image: mysql:5.7
-    container_name: livraria-mysql
+  dbmaster:
+    image: zhcdsan/mysqlmaster:8.0
+    container_name: dbmaster
     volumes:
       - livraria-mysql-data:/var/lib/mysql
     ports:
@@ -23,6 +23,34 @@ services:
       - MYSQL_DATABASE=livraria
       - MYSQL_USER=livraria
       - MYSQL_PASSWORD=livraria
+    networks:
+      - dbmasterslave
+
+  dbslave:
+    image: zhcdsan/mysqlslave:8.0
+    container_name: dbslave
+    volumes:
+      - livraria-mysql-slave-data:/var/lib/mysql
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=livraria
+      - MYSQL_USER=livraria
+      - MYSQL_PASSWORD=livraria
+    depends_on:
+      - dbmaster
+    networks:
+      - dbmasterslave
+
+  mysql-master-slave:
+    image: zhcdsan/mysqlmasterslave:8.0
+    container_name: livraria-masterslave-mysql
+    depends_on:
+      - dbmaster
+      - dbslave
+    networks:
+      - dbmasterslave
 
   # PHP (with Nginx)
   # you can change from nginx to apache, just change session 'image'
@@ -34,7 +62,7 @@ services:
     ports:
       - 18080:8080
     links:
-      - mysql
+      - mysql-master-slave
   #
   # mongodb:
   #   image: 'bitnami/mongodb:latest'
