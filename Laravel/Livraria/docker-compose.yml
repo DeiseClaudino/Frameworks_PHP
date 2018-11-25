@@ -30,7 +30,7 @@ services:
     image: zhcdsan/mysqlslave:8.0
     container_name: dbslave
     volumes:
-      - livraria-mysql-slave-data:/var/lib/mysql
+      - livraria-mysql-data:/var/lib/mysqlslave
     ports:
       - 3307:3306
     environment:
@@ -63,7 +63,10 @@ services:
       - 18080:8080
     links:
       - mysql-master-slave
-  #
+
+networks:
+    dbmasterslave:
+        driver: bridge
   # mongodb:
   #   image: 'bitnami/mongodb:latest'
   #   ports:
