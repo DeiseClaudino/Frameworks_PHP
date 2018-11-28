@@ -42,11 +42,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'Livraria_Tcc'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', 'mysql'),
+            'port' => env('DB_PORT', '13306'),
+            'database' => env('DB_DATABASE', 'livraria'),
+            'username' => env('DB_USERNAME', 'livraria'),
+            'password' => env('DB_PASSWORD', 'livraria'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
