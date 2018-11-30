@@ -1,44 +1,56 @@
-# v3 syntax
 version: '3'
 
-# Named volumes
-volumes:
-
-  # MySQL Data
-  livraria-mysql-data:
-    driver: local
-
 services:
-
-  # MySQL (5.7)
-  mysql:
-    image: mysql:5.7
-    container_name: livraria-mysql
-    volumes:
-      - livraria-mysql-data:/var/lib/mysql
+  dbmaster:
+    container_name: dbmaster
+    hostname: dbmaster
+    restart: on-failure
+    image: zhcdsan/mysqlmaster:8.0
+    build:
+      context: ./.docker/build/mysql/master/
     ports:
       - 13306:3306
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=livraria
-      - MYSQL_USER=livraria
-      - MYSQL_PASSWORD=livraria
-
-  mysqlslave:
-    image: mysql:5.7
-    container_name: livraria-mysql-slave
     volumes:
-      - livraria-mysql-data:/var/lib/mysql
-    ports:
-      - 13307:3307
+      - dbmastervolume:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=livraria
-      - MYSQL_USER=livraria
-      - MYSQL_PASSWORD=livraria
-    links:
-      - mysql
+      MYSQL_ROOT_PASSWORD: mypass
+      MYSQL_USER: masteruser
+      MYSQL_PASSWORD: masterpass
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    networks:
+      - dbnetwork
 
+  dbslave:
+    container_name: dbslave
+    hostname: dbslave
+    restart: on-failure
+    image: zhcdsan/mysqlslave:8.0
+    build:
+      context: ./.docker/build/mysql/slave/
+    ports:
+      - 13307:3306
+    volumes:
+      - dbslavevolume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: mypass
+      MYSQL_USER: slaveuser
+      MYSQL_PASSWORD: slavepass
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    depends_on:
+      - dbmaster
+    networks:
+      - dbnetwork
+
+  dbmasterslave:
+    container_name: dbmasterslave
+    image: zhcdsan/mysqlmasterslave:8.0
+    build:
+      context: ./.docker/build/mysql/masterslave/
+    depends_on:
+      - dbmaster
+      - dbslave
+    networks:
+      - dbnetwork
   # PHP (with Nginx)
   # you can change from nginx to apache, just change session 'image'
   app:
@@ -49,4 +61,14 @@ services:
     ports:
       - 18080:8080
     links:
-      - mysql
+      - dbmaster
+      - dbslave
+    networks:
+      - dbnetwork
+
+networks:
+  dbnetwork:
+
+volumes:
+  dbmastervolume:
+  dbslavevolume:
