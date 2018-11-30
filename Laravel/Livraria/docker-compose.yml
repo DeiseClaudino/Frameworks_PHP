@@ -6,8 +6,8 @@ services:
     hostname: dbmaster
     restart: on-failure
     image: zhcdsan/mysqlmaster:8.0
-    build:
-      context: ./.docker/build/mysql/master/
+#    build:
+#      context: ./.docker/build/mysql/master/
     ports:
       - 13306:3306
     volumes:
@@ -25,8 +25,8 @@ services:
     hostname: dbslave
     restart: on-failure
     image: zhcdsan/mysqlslave:8.0
-    build:
-      context: ./.docker/build/mysql/slave/
+#    build:
+#      context: ./.docker/build/mysql/slave/
     ports:
       - 13307:3306
     volumes:
@@ -44,8 +44,8 @@ services:
   dbmasterslave:
     container_name: dbmasterslave
     image: zhcdsan/mysqlmasterslave:8.0
-    build:
-      context: ./.docker/build/mysql/masterslave/
+#    build:
+#      context: ./.docker/build/mysql/masterslave/
     depends_on:
       - dbmaster
       - dbslave
@@ -68,7 +68,10 @@ services:
 
 networks:
   dbnetwork:
+    driver: bridge
 
 volumes:
   dbmastervolume:
+    driver: local
   dbslavevolume:
+    driver: local
