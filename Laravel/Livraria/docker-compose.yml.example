@@ -8,6 +8,9 @@ volumes:
   livraria-mysql-data:
     driver: local
 
+  livraria-mongodb-data:
+    driver: local
+
 services:
 
   # MySQL (5.7)
@@ -35,3 +38,12 @@ services:
       - 18080:8080
     links:
       - mysql
+
+  # MongoDB
+  mongodb:
+    image: 'bitnami/mongodb:latest'
+    container_name: livraria-mongodb
+    ports:
+      - "27018:27017"
+    volumes:
+      - livraria-mongodb-data:/var/lib/bitnami
