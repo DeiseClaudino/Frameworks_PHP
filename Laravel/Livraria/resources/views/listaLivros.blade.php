@@ -2,6 +2,13 @@
 @section('conteudo')
       <h1>Listagem de Livros</h1>
 
+      @if (old('nome')):
+      <div class="alert alert-success">
+        <strong>Sucesso!</strong>
+        Produto {{old('nome')}} adicionado com sucesso!
+      </div>
+      @endif
+
         <table class="table table-striped table-bordered table-hover">
 
             <tr>
