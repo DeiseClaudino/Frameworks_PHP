@@ -14,8 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
-                    <a href="/listaLivros" class="alert-link">See your books list here</a>
+                    <p><strong>Bem Vindo!</strong></p>
+                    <p>Esse site tem como objetivo armazenar informações dos seus livros e E-books de forma simples e prática.
+                    Com ele você pode: Incluir, alterar, excluir e visualizar informações dos seus livros!</p>
+                    <a href="/listaLivros" class="alert-link">Click aqui para visualizar seus livros já cadastrados</a>
                 </div>
             </div>
         </div>
