@@ -26,9 +26,15 @@
               <th>Categoria</th>
               <td>
                 <select name="categoria_id" class="form-control">
-                  @foreach ($categorias as $c):
-                  <option value="{{$c->id}}">{{$c->nome}}</option>
-                  @endforeach;
+                  <option value="Biografia">Biografia</option>
+                  <option value="Comedia">Comedia</option>
+                  <option value="Didatico">Didatico</option>
+                  <option value="HQs/Mangas">HQs/Mangas</option>
+                  <option value="Infanto/Juvenil">Infanto/Juvenil</option>
+                  <option value="Literatura">Literatura</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Suspense">Suspense</option>
+                  <option value="Terror">Terror</option>
                 </select>
             </td>
           </tr>

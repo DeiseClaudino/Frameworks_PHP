@@ -31,13 +31,22 @@
               <th>Categoria</th>
               <td>
                 <select name="categoria_id" class="form-control">
-                  @foreach ($categorias as $categoria):
+                  <optgroup label="Livros">
+                    <?php
+                     $tipos = array("Biografia", "Comedia", "Didatico","HQs/Mangas","Infanto/Juvenil","Literatura","Romance","Suspense","Terror");
+                     foreach ($tipos as $tipo) :
+                       $tipoSemEspaco = str_replace(" ", "", $tipo);
+                         $esseEhOTipo = $produto->categoria_id == $tipoSemEspaco;
+                         $selecao = $esseEhOTipo ? "selected='selected'" : "";
+                     ?>
+                         <option value="<?=$tipoSemEspaco?>" <?=$selecao?>>
+                             <?=$tipo?>
+                         </option>
 
-                    <option value="{{$categoria->id}}" {{$produto->categoria_id == $categoria->id ? "selected='selected'" : ""}}>
-                      {{$categoria->nome}}
-                    </option>
-
-                  @endforeach
+                     <?php
+                     endforeach
+                     ?>
+                  </optgroup>
                 </select>
 
             </td>
