@@ -2,6 +2,7 @@
 
 use App\Livro;
 use App\Categoria;
+use \Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\LivrosRequest;
 use Illuminate\Support\Facades\Request;
