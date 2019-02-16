@@ -5,7 +5,7 @@
       @if (old('nome')):
       <div class="alert alert-success">
         <strong>Sucesso!</strong>
-        Produto {{old('nome')}} adicionado com sucesso!
+        Produto {{old('nome')}} adicionado/alterado com sucesso!
       </div>
       @endif
 
@@ -28,7 +28,7 @@
               <td>{{ $produto->nome }}</td>
               <td>{{ $produto->preco }}</td>
               <td>{{ $produto->descricao }}</td>
-              <td>{{ $produto->categoria->nome}}</td>
+              <td>{{ $produto->categoria_id }}</td>
               <td>{{ $produto->isbn }}</td>
               <td>{{ $produto->tipoLivro }}</td>
               <td>{{ $produto->taxaImpressao }}</td>

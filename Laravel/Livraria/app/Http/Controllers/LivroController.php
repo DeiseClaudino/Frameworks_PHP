@@ -23,9 +23,8 @@ class LivroController extends Controller {
   public function buscaProduto($id)
     {
         $lista = Livro::find($id);
-        $categorias = Categoria::all();
 
-        return view('alteraLivros', ['produto' => $lista, 'categorias' => $categorias]);
+        return view('alteraLivros', ['produto' => $lista]);
     }
 
 
@@ -47,7 +46,7 @@ class LivroController extends Controller {
 
     public function abreFormulario()
     {
-      return view('adiciona-livro')->with('categorias', Categoria::all());
+      return view('adiciona-livro');
     }
 
     public function adicionaProduto(LivrosRequest $request){
