@@ -6,8 +6,24 @@ volumes:
 
   livraria-mongodb-data:
     driver: local
+  # MySQL Data
+  livraria-mysql-data:
+    driver: local
 
 services:
+
+  # MySQL (5.7)
+  mysql:
+    image: mysql:5.7
+    container_name: livraria-mysql
+    volumes:
+      - livraria-mysql-data:/var/lib/mysql
+    ports:
+      - 13306:3306
+    environment:
+      - MYSQL_DATABASE=livraria
+      - MYSQL_USER=livraria
+      - MYSQL_PASSWORD=livraria
 
   # PHP (with Nginx)
   # you can change from nginx to apache, just change session 'image'
