@@ -1,0 +1,57 @@
+nome,preco,descricao,isbn,tipoLivro,taxaImpressao,waterMark,categoria_id
+"O diario de Jhon Winchester",123,"História dos maiores hunters",4515151,LivroFisico,"9,00",NULL,Terror
+"Como se tornar o pior aluno da escola",45.5,"Dicas para navegar no oceano poluído chamado escola",987562125,LivroFisico,20.0,,Comedia
+"Politicamente Incorreto",55145,"Ria deles, antes que eles riam de você",2345678,LivroFisico,12,NULL,Comedia
+"O diario de um banana 0",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 1",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 2",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 3",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 4",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 5",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 6",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 7",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 8",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 9",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 10",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 11",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 12",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 13",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 14",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 15",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 16",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 17",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 18",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 19",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 20",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 21",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 22",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 23",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 24",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 25",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 26",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 27",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 28",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 29",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 30",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 31",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 32",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 33",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 34",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 35",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 36",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 37",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 38",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 39",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 40",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 41",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 42",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 43",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 44",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 45",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 46",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 47",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 48",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"O diario de um banana 49",25,"A coleção mais engracada que voce vai ler",851147622595995,LivroFisico,30,,Comedia
+"A garota do trem",55,"Mistérios além da vida",2345678,LivroFisico,12,,Acao
+"A menina que roubava livros",25,"kefknfndlksdndIntenso, intenso",2345678,LivroFisico,12,,Suspense
+"50 tons A briga",150,"O amor suporta o quêe,f dnvnklgl",123,Ebook,NULL,122,Suspense
