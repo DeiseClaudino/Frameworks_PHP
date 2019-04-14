@@ -45,3 +45,4 @@ services:
       - "27018:27017"
     volumes:
       - livraria-mongodb-data:/var/lib/bitnami
+      - ./livraria.csv:/docker-entrypoint-initdb.d/livraria.csv
