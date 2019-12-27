@@ -55,17 +55,17 @@ return [
             'engine' => null,
         ],
 
-        'mongodb' => [
-            'driver'   => 'mongodb',
-            'host'     => env('DB_HOST', 'localhost'),
-            'port'     => env('DB_PORT', 27017),
-            'database' => env('MONGO_DB_DATABASE'),
-            'username' => env('MONGODB_USERNAME'),
-            'password' => env('MONGODB_PASSWORD'),
-            'options'  => [
-                'database' => 'admin'
-            ]
-        ],
+        // 'mongodb' => [
+        //     'driver'   => 'mongodb',
+        //     'host'     => env('DB_HOST', 'localhost'),
+        //     'port'     => env('DB_PORT', 27017),
+        //     'database' => env('MONGO_DB_DATABASE'),
+        //     'username' => env('MONGODB_USERNAME'),
+        //     'password' => env('MONGODB_PASSWORD'),
+        //     'options'  => [
+        //         'database' => 'admin'
+        //     ]
+        // ],
 
         'pgsql' => [
             'driver' => 'pgsql',
