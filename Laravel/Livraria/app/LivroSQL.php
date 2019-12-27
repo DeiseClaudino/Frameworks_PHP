@@ -1,0 +1,13 @@
+<?php
+namespace App;
+use Illuminate\Database\Eloquent\Model;
+class LivroSQL extends Model
+{
+    public $timestamps = false;
+    protected $fillable = array('nome', 'preco', 'descricao',
+      'isbn', 'tipoLivro', 'taxaImpressao', 'waterMark', 'categoria_id');
+      public function categoria()
+      {
+        return $this->belongsTo('App\Categoria');
+      }
+}

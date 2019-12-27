@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Livro;
+use App\LivroSQL;
 use App\Categoria;
 use \Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,7 @@ class LivroController extends Controller {
   public function lista()
   {
     $produto = Livro::all();
+    // $produtoSQL = LivroSQL::all();
     return view('listaLivros')->withProduto($produto);
 }
 

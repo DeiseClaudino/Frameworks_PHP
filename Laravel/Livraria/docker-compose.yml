@@ -21,6 +21,7 @@ services:
     ports:
       - 13306:3306
     environment:
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=livraria
       - MYSQL_USER=livraria
       - MYSQL_PASSWORD=livraria
@@ -36,6 +37,7 @@ services:
       - 18080:8080
     links:
       - mongodb
+      - mysql
 
   # MongoDB
   mongodb:
@@ -45,4 +47,3 @@ services:
       - "27018:27017"
     volumes:
       - livraria-mongodb-data:/var/lib/bitnami
-      - ./livraria.csv:/docker-entrypoint-initdb.d/livraria.csv
