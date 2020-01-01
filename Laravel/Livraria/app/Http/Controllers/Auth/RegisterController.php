@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -43,30 +43,54 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array  $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function validator(array $request)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+        return Validator::make($request, [
+            'name'          =>  'required|string|max:255',
+            'dt_nasc'       =>  'date_format:Y-m-d',
+            'address'       =>  'required|string|max:255',
+            'add_number'    =>  'required|numeric',
+            'city'          =>  'required|max:255',
+            'uf'            =>  'required|max:2',
+            'email'         =>  'required|string|email|max:255|unique:users',
+            'password'      =>  'required|string|min:6|confirmed',
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array  $request
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(array $request)
     {
+
+        // try
+        // {
+        //     if(User::where('email', $request->email)->exists())
+        //     {
+        //         return $this->returnJson(422, 'Oops! esse usuário já existe, por gentileza recupere sua senha ou cadastre um novo email.', $request->email);
+        //     }
+
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'name'          =>  $request['name'],
+            'dt_nasc'       =>  $request['dt_nasc'],
+            'address'       =>  $request['address'],
+            'add_number'    =>  $request['add_number'],
+            'city'          =>  $request['city'],
+            'uf'            =>  $request['uf'],
+            'email'         =>  $request['email'],
+            'password'      =>  Hash::make($request['password']),
         ]);
+
+        // }catch(\Exception $e)
+        // {
+        //     return 'Ocorreu um erro ao salvar seu usuário, por gentileza, tente novamente mais tarde.';
+        // }
+   
     }
 }
